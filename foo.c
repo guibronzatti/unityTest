@@ -19,7 +19,6 @@ void * sortVector (int *v, int size)
 {
     int i, k, j=0, vp[size];
     int maxIndex=0;
-
     while (check(v,size) == -1)
     {
         for (i=0; i<size; i++)
@@ -28,9 +27,9 @@ void * sortVector (int *v, int size)
             for (k=i+1; k<size; k++)
             {
                 if (v[k] > v[maxIndex])
-                  maxIndex=k; 
+                  maxIndex=k;  
             }
-           
+
                     vp[i] = v[maxIndex];
                     v[maxIndex]=v[i];
                     v[i]=-1;
@@ -41,5 +40,5 @@ void * sortVector (int *v, int size)
     for (i=0; i<size; i++)
         v[i] = vp[i];
 
-    return (int *)v[0];
+    return *v;
 }
